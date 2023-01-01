@@ -23,4 +23,4 @@ def api(in_cur,out_cur):
     return jsonify(result_dict)
 
 
-app.run(host="localhost")
+app.run()
