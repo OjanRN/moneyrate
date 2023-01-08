@@ -16,10 +16,10 @@ app = Flask(__name__)
 def home():
     return '<body> <p style="font-family:verdana">Example URL: /api/v1/usd-eur</p>'
 
-@app.route('/api/v1/<in_cur>-<out_cur>')
+@app.route('/api/<in_cur>-<out_cur>')
 def api(in_cur,out_cur):
     rate = get_cur(in_cur,out_cur)
     result_dict = {"input currency":in_cur,"output currency":out_cur,"rate":rate}
     return jsonify(result_dict)
 
-# app.run()
+app.run(host="0.0.0.0")
